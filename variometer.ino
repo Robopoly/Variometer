@@ -10,7 +10,6 @@
 
 // Pins utilises, le buzzer sont sur les pins 9 & 10 pour l'atmega 328 (voir librairie toneAC)
 #define vibrant 12
-#define debug 0
 #define button 3
 
 Adafruit_BMP280 bme;  // cree objet barometre
@@ -34,6 +33,7 @@ unsigned long debounceDelay = 50;
 float timer = millis();
 uint8_t beepLatency;
 uint16_t beepFrequency;
+
 
 void updateAlt(){
   alt = alt * 0.99 + 0.01 * bme.readAltitude(pressure_0);
